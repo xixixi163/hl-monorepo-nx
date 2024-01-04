@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "preinstall": "npx -y only-allow pnpm"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.2",
+    "@vue/runtime-core": "^3.4.4",
+    "lerna": "^8.0.1",
+    "less": "^4.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vue": "^3.4.3"
+  }
+}
