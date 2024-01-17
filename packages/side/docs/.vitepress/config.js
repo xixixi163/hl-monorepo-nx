@@ -1,5 +1,6 @@
 export default {
     themeConfig: {
+      base: process.env.NODE_ENV === 'production' ? '/docs/' : '',
       siteTitle: "vitepress",
       nav: [
         { text: "指南", link: "/guild/" },
