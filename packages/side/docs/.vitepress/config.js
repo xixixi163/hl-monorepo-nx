@@ -44,7 +44,7 @@ export default {
         ]
     },
       socialLinks: [
-        { icon: "github", link: "https://github.com/xixixi163/mini-app" },
+        { icon: "github", link: "https://github.com/xixixi163/hl-monorepo-nx" },
       ],
     },
   };
