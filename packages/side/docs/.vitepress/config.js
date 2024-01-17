@@ -1,6 +1,6 @@
 export default {
     themeConfig: {
-      base: process.env.NODE_ENV === 'production' ? '/docs/' : '',
+      base: process.env.NODE_ENV === 'production' ? '/hl-monorepo-nx/' : '',
       siteTitle: "vitepress",
       nav: [
         { text: "指南", link: "/guild/" },
