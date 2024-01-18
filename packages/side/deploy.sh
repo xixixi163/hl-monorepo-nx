@@ -11,6 +11,7 @@ cd docs/.vitepress/dist
 
 git remote add lotus-leaf-docs https://github.com/lotusui/lotus-leaf-docs.git
 git add -A
+# git status
 git commit -m 'deploy'
 
 # 如果部署到 https://<USERNAME>.github.io

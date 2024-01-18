@@ -1,6 +1,7 @@
 export default {
+    title: 'lotus-leaf-docs',
+    base: process.env.NODE_ENV === 'production' ? '/lotus-leaf-docs/' : '/',
     themeConfig: {
-      base: process.env.NODE_ENV === 'production' ? '/lotus-leaf-docs/' : '',
       siteTitle: "vitepress",
       nav: [
         { text: "指南", link: "/guild/" },
