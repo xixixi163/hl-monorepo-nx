@@ -16,6 +16,7 @@ git commit -m 'deploy'
 # 如果部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
+# https://lotusui.github.io/lotus-leaf-docs/
 # 如果是部署到 https://<USERNAME>.github.io/<REPO>
 git push -f lotus-leaf-docs main
 
