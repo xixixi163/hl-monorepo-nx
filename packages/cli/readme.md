@@ -26,3 +26,21 @@ download-git-repo 工具拉去远程仓库；loading插件-ora；log 颜色插�
 - 解决：地址上加`#main`
 
 6、发布脚手架
+使用 release-it 自动发布工具
+- 配置
+本目录下配置参考：https://github.com/release-it/release-it/blob/main/docs/recipes/monorepo.md
+
+monorepo根目录配置参考：https://github.com/release-it/release-it/blob/main/docs/recipes/monorepo.md
+
+- 问题：改了版本号，但是报错了如下
+```
+ERROR npm ERR! code EUNSUPPORTEDPROTOCOL
+npm ERR! Unsupported URL Type "workspace:": workspace:^
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/yiqian/.npm/_logs/2024-01-23T08_23_26_944Z-debug-0.log
+
+ ELIFECYCLE  Command failed with exit code 1.
+```
+
+解决：因为使用了pnpm，workspace配置文件在`pnpm-workspace.yaml`,`package.json`中的workspace冲突了，删掉即可
