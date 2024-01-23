@@ -1,6 +1,6 @@
 # 使用说明
 # 介绍
-`pnpm init create-lotus` 实际是 `npx create-lotus-ui`, npx 直接安装并运行
+`pnpm init create-lotus-ui` 实际是 `npx create-lotus-ui`, npx 直接安装并运行
 
 1、当执行`create-lotus-ui`时，会执行`package.json`下的bin 对应的路径，因此把main 改成bin
 
@@ -24,3 +24,5 @@ download-git-repo 工具拉去远程仓库；loading插件-ora；log 颜色插�
 问题：使用`download-git-repo`拉去远程代码，报错：`Error: 'git checkout' failed with status 1`
 - 原因：没有找到master分支，使用的是main
 - 解决：地址上加`#main`
+
+6、发布脚手架
