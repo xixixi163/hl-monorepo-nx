@@ -36,3 +36,6 @@ pnpm解决：
 更改了工作区 `workspaces`，需要重新 `pnpm i`；同一个包下面才可以成功使用 `pnpm add [packages-name]`；
 但是不同包下直接使用`pnpm add` 会失败,如`componnets`下的组件库安装到`packages`下的项目里,需要使用命令：`pnpm install @lotus-leaf/mini-app -r --filter b`
 
+# 使用说明
+`pnpm install`
+

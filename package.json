@@ -1,11 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm"
+    "preinstall": "npx -y only-allow pnpm",
+    "release": "npm run release --workspaces && release-it"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.2",
@@ -16,5 +14,16 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vue": "^3.4.3"
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
+    }
   }
 }
