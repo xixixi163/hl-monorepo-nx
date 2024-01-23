@@ -44,3 +44,6 @@ npm ERR!     /Users/yiqian/.npm/_logs/2024-01-23T08_23_26_944Z-debug-0.log
 ```
 
 解决：因为使用了pnpm，workspace配置文件在`pnpm-workspace.yaml`,`package.json`中的workspace冲突了，删掉即可
+
+7、使用发布后的脚手架
+`pnpm create lotus-ui` 或 `npx create-lotus-ui` 或 `npm init lotus-ui`
