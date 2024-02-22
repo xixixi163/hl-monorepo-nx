@@ -2,7 +2,11 @@
 # 介绍
 `pnpm init create-lotus-ui` 实际是 `npx create-lotus-ui`, npx 直接安装并运行
 
+npx：node 包执行管理器，执行可执行文件，如sh exe，bin指向的文件
+
 1、当执行`create-lotus-ui`时，会执行`package.json`下的bin 对应的路径，因此把main 改成bin
+
+说明：在node.js的包管理器 npm 中，如果在包的`package.json`文件中的`bin`字段中定义了命令，npm在安装这个包时会字段将这些命令注册到全局环境中，使得你可以在终端中直接执行这些命令
 
 2、处理用户输入参数的插件有很多,比如 CAC,Yargs,Commander.js,command-line-args 等,
 command-line-args 使用起来是最简单的,所以这里使用 command-line-args 进行用户参数解析，也就是识别命令。

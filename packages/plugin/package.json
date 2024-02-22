@@ -1,0 +1,16 @@
+{
+  "name": "@lotus-leaf/plugin",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "add": "create-vue-component"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@lotus-leaf/plugin-add-components": "workspace:^"
+  }
+}
