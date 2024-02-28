@@ -14,6 +14,7 @@ function create<T>(proto: T): T {
   //  这个新对象的原型指向了 proto，因此它可以继承 proto 上的属性和方法。
   (F as any).prototype = proto;
   //   使用 new 运算符创建一个新对象，并将新对象的原型设置为proto
+  // 当用 `new` 关键字创建一个实例时，这个实例的 `__proto__` 属性会指向构造函数的 `prototype` 属性。
   return new (F as any)();
 }
 
@@ -29,3 +30,5 @@ const personProto: Person = {
 
 const john = create<Person>(personProto);
 john.greet();
+
+console.log(john, "==");
