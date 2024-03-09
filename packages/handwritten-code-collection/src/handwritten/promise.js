@@ -27,7 +27,7 @@ function MyPromise(fn) {
       return value.then(resolve, reject);
     }
 
-    // 保证代码的执行顺序为本轮事件循环的末尾
+    // 保证代码的执行顺序为本轮事件循环的末尾，已注册完所有callback
     setTimeout(() => {
       // 只有状态为 pending 时才能转变
       if (self.state === PENDING) {
