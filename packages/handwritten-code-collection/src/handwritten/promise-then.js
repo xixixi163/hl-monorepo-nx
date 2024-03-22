@@ -119,6 +119,21 @@ console.log(
     .then((res) => {
       console.log(res);
     })
+    .then(
+      (res) => {
+        return new Promise((reject) => reject(`error ${res}`));
+      },
+      (err) => {
+        // 没有写catch，所以reject中执行
+        throw new Error(`error。。。 ${err}`);
+      }
+    )
+  // .then((res) => {
+  //   throw Error(`error ${res}`);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // })
 );
 
 // Promise.resolve(1)
@@ -133,15 +148,21 @@ console.log(
 //     console.log(res);
 //   });
 
-console.log(
-  new Promise((resolve) => resolve(3))
-    .then((res) => {
-      console.log(res);
-      return Promise.resolve(2);
-    })
-    .then((res) => {
-      console.log(res);
-      return new Promise((resolve) => resolve(1));
-    })
-    .then((res) => console.log(res))
-);
+// console.log(
+new Promise((resolve) => setTimeout(() => resolve(3), 0))
+  .then((res) => {
+    console.log(res);
+    return Promise.resolve(2);
+  })
+  .then((res) => {
+    console.log(res);
+    return new Promise((resolve) => resolve(1));
+  })
+  // .then((res) => console.log(res))
+  .then((res) => {
+    throw new Error(`error!!!${res}`);
+  })
+  .catch((err) => {
+    console.log(err, "err...");
+  });
+// );
