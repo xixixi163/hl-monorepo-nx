@@ -144,3 +144,15 @@ let p3 = new MyPromise(function (resolve, reject) {
 promiseAll([p3, p1, p2]).then((res) => {
   console.log(res);
 });
+
+let pp1 = Promise.resolve(2);
+let pp2 = new Promise((resolve) => {
+  resolve("a");
+});
+let pp3 = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 0);
+});
+
+Promise.all([pp3, pp2, pp1]).then((res) => console.log(res));
