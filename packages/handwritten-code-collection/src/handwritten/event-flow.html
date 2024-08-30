@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="blueBox" style="background-color: blue; width: 200px; height: 200px;">
+        <div id="yellowBox" style="background-color: yellow; width: 100px; height: 100px;">
+            <div id="greenBox" style="background-color: green; width: 50px; height: 50px;"></div>
+        </div>
+    </div>
+    <script>
+        let blueBox = document.getElementById('blueBox')
+        let yellowBox = document.getElementById('yellowBox')
+        let greenBox = document.getElementById('greenBox')
+
+        // 事件流 true捕获，false默认 冒泡
+        blueBox.addEventListener('click', function () {
+            console.log('blue')
+        })
+        yellowBox.addEventListener('click', function () {
+            console.log('yellow')
+        },true)
+        greenBox.addEventListener('click', function() {
+            console.log('green')
+            // 阻止事件向外传播，捕获阶段不干涉，目标元素都为true 或都为false，不影响目标元素的其他事件
+            // event.stopPropagation()
+            // 阻止事件向外传播，已经目标元素的其他事件触发
+            // event.stopImmediatePropagation()
+            event.preventDefault()
+        }) // 目标事件为true，捕获阶段触发，目标元素的其他事件为false，那么 stopPropagation 也会阻止目标元素的其他事件触发
+        greenBox.addEventListener('click', function() {
+            console.log('green other')
+        })
+    </script>
+</body>
+</html>
