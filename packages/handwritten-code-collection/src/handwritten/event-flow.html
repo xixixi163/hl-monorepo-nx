@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <a id="mya" href="#">
+        <span id="myspan">方正</span>
+    </a>
     <div id="blueBox" style="background-color: blue; width: 200px; height: 200px;">
         <div id="yellowBox" style="background-color: yellow; width: 100px; height: 100px;">
             <div id="greenBox" style="background-color: green; width: 50px; height: 50px;"></div>
@@ -15,6 +18,11 @@
         let blueBox = document.getElementById('blueBox')
         let yellowBox = document.getElementById('yellowBox')
         let greenBox = document.getElementById('greenBox')
+        let aBOx = document.getElementById('mya')
+
+        aBOx.addEventListener('click', function(event) {
+            console.log('a event',event)
+        })
 
         // 事件流 true捕获，false默认 冒泡
         blueBox.addEventListener('click', function () {
@@ -27,7 +35,7 @@
             console.log('green')
             // 阻止事件向外传播，捕获阶段不干涉，目标元素都为true 或都为false，不影响目标元素的其他事件
             // event.stopPropagation()
-            // 阻止事件向外传播，已经目标元素的其他事件触发
+            // 阻止事件向外传播，以及目标元素的其他事件触发
             // event.stopImmediatePropagation()
             event.preventDefault()
         }) // 目标事件为true，捕获阶段触发，目标元素的其他事件为false，那么 stopPropagation 也会阻止目标元素的其他事件触发

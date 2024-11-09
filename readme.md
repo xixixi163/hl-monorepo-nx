@@ -33,8 +33,9 @@ pnpm解决：
 - 其他用法和往常使用`lerna`一样
 
 # 小记
-更改了工作区 `workspaces`，需要重新 `pnpm i`；同一个包下面才可以成功使用 `pnpm add [packages-name]`；
+- 更改了工作区 `workspaces`，需要重新 `pnpm i`；同一个包下面才可以成功使用 `pnpm add [packages-name]`；
 但是不同包下直接使用`pnpm add` 会失败,如`componnets`下的组件库安装到`packages`下的项目里,需要使用命令：`pnpm install @lotus-leaf/mini-app -r --filter b`
+- 安装workspace的包，直接使用`pnpm add b`，会去远端下载，因为`pnpm add`默认会使用npm注册表的源安装，如果要安装workspace的包，使用`pnpm add b --workspace`或在pacakage.json中指定包为'workspace: ^'。参考链接：https://pnpm.io/zh/cli/add；在文件.npmrc中配置`link-workspace-packages=true`没有用
 
 # 使用说明
 `pnpm install`
