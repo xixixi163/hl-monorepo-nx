@@ -10,6 +10,10 @@ const PENDING = "pending";
 const FULFILLRD = "fulfilled";
 const REJECTED = "rejected";
 
+/**
+ * 构造函数，宏任务执行then/catch的回调
+ * @param {*} fn 回调 fn(resolve,reject)
+ */
 function MyPromise(fn) {
   var self = this;
   this.value = null;
@@ -22,6 +26,8 @@ function MyPromise(fn) {
       return value.then(resolve, reject);
     }
 
+    // 放到宏任务保证 resolve(value) 的时候，把值传给then的回调，可以接收到
+    // 改变状态在宏任务中改变
     setTimeout(() => {
       if (self.state === PENDING) {
         self.state = FULFILLRD;
@@ -58,6 +64,7 @@ function MyPromise(fn) {
  *      这次又会依次调用新promise的callbacks，循环上面过程。
  *      如果返回结果是一个promise，则需要走promise的then把callback存起来。
  *      等他完成之后再触发新promise的resolve，所以promise.then
+ * then返回Promise，pending将回调存起来，否则执行
  * @param {*} onFulfilled
  * @param {*} onRejected
  * @returns
